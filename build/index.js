@@ -6,13 +6,19 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const lexer_1 = __importDefault(require("./lexer"));
 const syntax_1 = __importDefault(require("./syntax"));
 const code = `
-	print(pow(-0.3, 2));
-	print(pow(-0.2, 2));
-	print(pow(-0.1, 2));
-	print(pow(0, 2));
-	print(pow(0.1, 2));
-	print(pow(0.2, 2));
-	print(pow(0.3, 2));
+	$x = -5;
+	while ($x <= 5) {
+		$y = $x;
+		if ($x < 0) {
+			$y = $x * 0.01;
+		};
+		if ($x > 1) {
+			$y = 0.01 * $x + 1;
+		};
+		$x = $x + .5;
+
+		print($y);
+	};
 `;
 const lexer = new lexer_1.default();
 const syntax = new syntax_1.default();

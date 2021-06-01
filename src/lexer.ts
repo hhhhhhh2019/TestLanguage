@@ -42,23 +42,38 @@ export default class Lexer {
 				if (word.length > 0)
 					this.tokenList.push(new Token(getTokenType(word), word, this.pos - word.length));
 				word = "";
-			} else if (isType(symbol, TokenTypes.SEMICOLON)) {
+			}
+			 else if (isType(symbol, TokenTypes.SEMICOLON)) {
 				this.tokenList.push(new Token(getTokenType(word), word, this.pos - word.length));
 				word = "";
 				this.tokenList.push(new Token(TokenTypes.SEMICOLON, symbol, this.pos - word.length));
-			} else if (isType(symbol, TokenTypes.LPAR)) {
+			}
+			 else if (isType(symbol, TokenTypes.LPAR)) {
 				this.tokenList.push(new Token(getTokenType(word), word, this.pos - word.length));
 				word = "";
 				this.tokenList.push(new Token(TokenTypes.LPAR, symbol, this.pos - word.length));
-			} else if (isType(symbol, TokenTypes.RPAR)) {
+			}
+			 else if (isType(symbol, TokenTypes.RPAR)) {
 				this.tokenList.push(new Token(getTokenType(word), word, this.pos - word.length));
 				word = "";
 				this.tokenList.push(new Token(TokenTypes.RPAR, symbol, this.pos - word.length));
-			} else if (isType(symbol, TokenTypes.COMMA)) {
+			}
+			 else if (isType(symbol, TokenTypes.LBRACE)) {
+				this.tokenList.push(new Token(getTokenType(word), word, this.pos - word.length));
+				word = "";
+				this.tokenList.push(new Token(TokenTypes.LBRACE, symbol, this.pos - word.length));
+			}
+			 else if (isType(symbol, TokenTypes.RBRACE)) {
+				this.tokenList.push(new Token(getTokenType(word), word, this.pos - word.length));
+				word = "";
+				this.tokenList.push(new Token(TokenTypes.RBRACE, symbol, this.pos - word.length));
+			}
+			 else if (isType(symbol, TokenTypes.COMMA)) {
 				this.tokenList.push(new Token(getTokenType(word), word, this.pos - word.length));
 				word = "";
 				this.tokenList.push(new Token(TokenTypes.COMMA, symbol, this.pos - word.length));
-			} else {
+			}
+			 else {
 				word += symbol;
 			}
 

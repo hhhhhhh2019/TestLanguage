@@ -54,6 +54,16 @@ class Lexer {
                 word = "";
                 this.tokenList.push(new token_1.default(tokenType_1.TokenTypes.RPAR, symbol, this.pos - word.length));
             }
+            else if (isType(symbol, tokenType_1.TokenTypes.LBRACE)) {
+                this.tokenList.push(new token_1.default(getTokenType(word), word, this.pos - word.length));
+                word = "";
+                this.tokenList.push(new token_1.default(tokenType_1.TokenTypes.LBRACE, symbol, this.pos - word.length));
+            }
+            else if (isType(symbol, tokenType_1.TokenTypes.RBRACE)) {
+                this.tokenList.push(new token_1.default(getTokenType(word), word, this.pos - word.length));
+                word = "";
+                this.tokenList.push(new token_1.default(tokenType_1.TokenTypes.RBRACE, symbol, this.pos - word.length));
+            }
             else if (isType(symbol, tokenType_1.TokenTypes.COMMA)) {
                 this.tokenList.push(new token_1.default(getTokenType(word), word, this.pos - word.length));
                 word = "";

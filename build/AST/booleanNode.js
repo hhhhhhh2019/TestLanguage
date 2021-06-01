@@ -4,11 +4,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const node_1 = __importDefault(require("./node"));
-class VariableNode extends node_1.default {
-    constructor(variable, inverse) {
+class BooleanNode extends node_1.default {
+    constructor(bool) {
         super();
-        this.variable = variable;
-        this.inverse = inverse;
+        this.bool = bool;
     }
 }
-exports.default = VariableNode;
+exports.default = BooleanNode;
